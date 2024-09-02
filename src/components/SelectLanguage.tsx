@@ -23,13 +23,13 @@ export default function SelectLanguage() {
         { key: 'vi', label: 'Tiếng Việt' },
         // Uncomment the following lines to add more languages
         // { key: 'de', label: 'Deutsch' },
-        // { key: 'es', label: 'Español' },
+        { key: 'es', label: 'Español' },
         // { key: 'fr', label: 'Français' },
         // { key: 'it', label: 'Italiano' },
         // { key: 'ko', label: '한국어' },
         // { key: 'pt', label: 'Português' },
         // { key: 'ru', label: 'Русский' },
-        // { key: 'zh', label: '中文' },
+        { key: 'zh', label: '中文' },
         // { key: 'id', label: 'Bahasa Indonesia' },
         // { key: 'ne', label: 'नेपाली' },
     ], []);

@@ -45,5 +45,8 @@
     "pref": "都道府県",
     "city-district": "市区町村",
     "town": "町"
+  },
+  "CarbonCredit":{
+    "labelCarbon": "このチャートは、カーボンクレジットのために集めたポイントを表示します"
   }
 }

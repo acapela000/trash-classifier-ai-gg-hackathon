@@ -36,5 +36,8 @@
     "pref": "Tỉnh/Thành phố",
     "city-district": "Quận/Huyện",
     "town": "Thị trấn"
+  },
+  "CarbonCredit":{
+    "labelCarbon":"Biểu đồ hiển thị số điểm bạn thu thập được cho tín chỉ carbon"
   }
 }

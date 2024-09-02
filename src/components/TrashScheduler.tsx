@@ -44,11 +44,13 @@ export default function TrashScheduler() {
     // range = now;
 
     return (
+        
         <ReactEChartsCore
             echarts={echarts}
             option={option}
             lazyUpdate={true}
             style={{ width: "100%", height: "90vh" }}
         />
+      
     );
 }
