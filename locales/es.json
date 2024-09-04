@@ -44,9 +44,13 @@
     "postalCode": "Código Postal",
     "pref": "Prefectura",
     "city-district": "Ciudad-Distrito",
-    "town": "Pueblo"
+    "town": "Pueblo",
+    "placeholder":"Sin guiones entre números"
   },
   "CarbonCredit": {
     "labelCarbon": "El gráfico muestra los puntos que acumulas para el crédito de carbono"
+  },
+  "SelectLa":{
+    "labelSelect":"Selecciona tu idioma"
   }
 }

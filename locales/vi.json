@@ -35,9 +35,13 @@
     "postalCode": "Mã bưu điện",
     "pref": "Tỉnh/Thành phố",
     "city-district": "Quận/Huyện",
-    "town": "Thị trấn"
+    "town": "Thị trấn",
+    "placeholder":"không có dấu gạch ngang ở giữa"
   },
   "CarbonCredit":{
     "labelCarbon":"Biểu đồ hiển thị số điểm bạn thu thập được cho tín chỉ carbon"
+  },
+  "SelectLa":{
+    "labelSelect":"Tuỳ chỉnh ngôn ngữ"
   }
 }

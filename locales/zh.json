@@ -44,10 +44,14 @@
     "postalCode": "邮政编码",
     "pref": "省",
     "city-district": "城市/区",
-    "town": "镇"
+    "town": "镇",
+    "placeholder":"数字之间无短横线"
     },
  "CarbonCredit": {
     "labelCarbon": "图表显示您为碳信用收集的积分"
-    }
+    },
+    "SelectLa":{
+        "labelSelect":"选择您的语言"
+      }
   }
   

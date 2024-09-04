@@ -83,7 +83,6 @@ export default function FormInputZipcode({ cf, setLocation, location }: Props) {
     };
 
     const f = useTranslations('FormInputZipcode');
-
     return (
         <>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -95,7 +94,7 @@ export default function FormInputZipcode({ cf, setLocation, location }: Props) {
                         value={zipcode}
                         onValueChange={(value: string) => setZipcode(value)}
                         //className='w-8 border border-emeral-600 rounded-md'
-                        placeholder="1230007 (No dash between numbers)"
+                        placeholder={`1230007 (${f('placeholder')})`}
                     />
                     <Button
                         color="success"
