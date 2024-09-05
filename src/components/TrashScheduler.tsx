@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useMemo } from "react";
 import ReactEChartsCore from 'echarts-for-react/lib/core';
 import * as echarts from 'echarts/core';
 import { CustomChart } from 'echarts/charts';
@@ -22,6 +22,10 @@ export default function TrashScheduler() {
         }
         return c('nameMap').split(',');
     }, [c, locale]);
+    const date = useMemo(()=>{
+        const now = new Date();
+        return `${now.getFullYear()}-${(now.getMonth()+1).toString}`
+    },[])
     React.useEffect(() => {
         setOption({
             tooltip: {},
@@ -30,12 +34,19 @@ export default function TrashScheduler() {
                     left: 'center',
                     top: 'middle',
                     cellSize: [70, 70],
-                    yearLabel: { show: false },
+                    yearLabel: { 
+                        show: true,
+                        position:"top",
+                        fontSize:50,
+                        formatter: date,
+                        margin:70,
+                        color:'black'
+                    },
                     orient: 'vertical',
                     monthLabel: {
                         show: false
                     },
-                    range: '2024-07',
+                    range: date,
                     dayLabel: {
                         firstDay: locale == 'en'?0:1,
                         nameMap: week
@@ -50,12 +61,9 @@ export default function TrashScheduler() {
                 renderItem: function (params: any, api: any) { return; }
             }
         });
-    }, [week, locale]);
-    //get current year/month
-    // const now = (new Date().getMonth() + 1).toString() + '-' + new Date().getFullYear().toString();
-    // range = now;
+    }, [week, locale,date]);
+
     return (
-        
         <ReactEChartsCore
             echarts={echarts}
             option={option}
