@@ -10,39 +10,43 @@ import { range } from "@tensorflow/tfjs";
 echarts.use(
     [CustomChart, CalendarComponent, SVGRenderer, TooltipComponent]
 );
-const config = {
-    tooltip: {},
-    calendar: [
-        {
-            left: 'center',
-            top: 'middle',
-            cellSize: [70, 70],
-            yearLabel: { show: false },
-            orient: 'vertical',
-            dayLabel: {
-                firstDay: 1,
-            },
-            monthLabel: {
-                show: false
-            },
-            range: '2024-07'
-        }
-    ],
-    series: {
-        type: 'custom',
-        coordinateSystem: 'calendar',
-        dimensions: [undefined, { type: 'ordinal' }],
-        data: [],
-        renderItem: function (params: any, api: any) { return; }
-    }
-};
-
 export default function TrashScheduler() {
-    const [option, setOption] = React.useState(config);
-    //get current year/month
-    // const now = (new Date().getMonth() + 1).toString() + '-' + new Date().getFullYear().toString();
-    // range = now;
-
+    const [option, setOption] = React.useState({});
+    const currentYear = new Date().getFullYear(); 
+    const currentMonth = (new Date().getMonth() + 1).toString();
+    React.useEffect(() => {
+        setOption({
+            tooltip: {},
+            calendar: [
+                {
+                    left: 'center',
+                    top: 'middle',
+                    cellSize: [70, 70],
+                    yearLabel: {
+                        show: true,
+                        position: 'top', 
+                        fontSize: 50,
+                        formatter: `${currentYear} - ${currentMonth}`, 
+                        margin: 70, 
+                        color:'black'  
+                    },
+                    orient: 'vertical',
+                    monthLabel: {show: false},
+                    range: `${currentYear}-${currentMonth}`,
+                    dayLabel: {
+                        firstDay: 1
+                    },
+                }
+            ],
+            series: {
+                type: 'custom',
+                coordinateSystem: 'calendar',
+                dimensions: [undefined, { type: 'ordinal' }],
+                data: [],
+                renderItem: function (params: any, api: any) { return; }
+            }
+        });
+    }, [currentMonth,currentYear]);
     return (
         <ReactEChartsCore
             echarts={echarts}
