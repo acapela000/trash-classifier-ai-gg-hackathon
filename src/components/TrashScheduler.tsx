@@ -66,6 +66,7 @@ export default function TrashScheduler() {
             option={option}
             lazyUpdate={true}
             style={{ width: "100%", height: "90vh" }}
+            className="relative sm:w-[20%] sm:h-[60vh] mx-auto overflow-auto" // this is not working
         />
       
     );
