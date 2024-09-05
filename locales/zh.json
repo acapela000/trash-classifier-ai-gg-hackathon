@@ -52,6 +52,9 @@
     },
     "SelectLa":{
         "labelSelect":"选择您的语言"
+      },
+      "Calendar": {
+        "nameMap": "ZH"
       }
   }
   
