@@ -52,5 +52,9 @@
   },
   "SelectLa":{
     "labelSelect":"Selecciona tu idioma"
+  },
+  "Calendar": {
+    "nameMap": "D,L,M,X,J,V,S"
   }
 }
+  

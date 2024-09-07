@@ -52,5 +52,8 @@
   },
   "SelectLa":{
     "labelSelect":"Select your language"
+  },
+  "Calendar": {
+    "nameMap": "EN"
   }
 }
