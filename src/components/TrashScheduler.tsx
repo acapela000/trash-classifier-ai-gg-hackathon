@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useMemo } from "react";
 import ReactEChartsCore from 'echarts-for-react/lib/core';
 import * as echarts from 'echarts/core';
 import { CustomChart } from 'echarts/charts';
@@ -12,8 +12,10 @@ echarts.use(
 );
 export default function TrashScheduler() {
     const [option, setOption] = React.useState({});
-    const currentYear = new Date().getFullYear(); 
-    const currentMonth = (new Date().getMonth() + 1).toString();
+    const date = useMemo(()=>{
+        const now = new Date();
+        return `${now.getFullYear()}-${(now.getMonth()+1).toString()}`;
+    },[])
     React.useEffect(() => {
         setOption({
             tooltip: {},
@@ -21,23 +23,23 @@ export default function TrashScheduler() {
                 {
                     left: 'center',
                     top: 'middle',
-                    cellSize: [70, 70],
+                    cellSize: [70, 70], 
                     yearLabel: {
                         show: true,
                         position: 'top', 
                         fontSize: 50,
-                        formatter: `${currentYear} - ${currentMonth}`, 
+                        formatter: date,
                         margin: 70, 
                         color:'black'  
                     },
                     orient: 'vertical',
                     monthLabel: {show: false},
-                    range: `${currentYear}-${currentMonth}`,
+                    range: date,
                     dayLabel: {
                         firstDay: 1
                     },
                 }
-            ],
+            ],  
             series: {
                 type: 'custom',
                 coordinateSystem: 'calendar',
@@ -46,7 +48,7 @@ export default function TrashScheduler() {
                 renderItem: function (params: any, api: any) { return; }
             }
         });
-    }, [currentMonth,currentYear]);
+    }, [date]);
     return (
         <ReactEChartsCore
             echarts={echarts}
