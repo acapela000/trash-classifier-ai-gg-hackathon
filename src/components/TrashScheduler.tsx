@@ -1,5 +1,6 @@
 "use client";
 import React, { useMemo } from "react";
+import React, { useMemo } from "react";
 import ReactEChartsCore from 'echarts-for-react/lib/core';
 import * as echarts from 'echarts/core';
 import { CustomChart } from 'echarts/charts';
@@ -16,15 +17,9 @@ export default function TrashScheduler() {
     const locale = useLocale();
     const c = useTranslations('Calendar');
     const [option, setOption] = React.useState({});
-    const week = React.useMemo(() => {
-        if (directWeekLocale.includes(locale)) {
-            return c('nameMap');
-        }
-        return c('nameMap').split(',');
-    }, [c, locale]);
     const date = useMemo(()=>{
         const now = new Date();
-        return `${now.getFullYear()}-${(now.getMonth()+1).toString}`
+        return `${now.getFullYear()}-${(now.getMonth()+1).toString()}`;
     },[])
     React.useEffect(() => {
         setOption({
@@ -33,26 +28,24 @@ export default function TrashScheduler() {
                 {
                     left: 'center',
                     top: 'middle',
-                    cellSize: [70, 70],
-                    yearLabel: { 
+                    cellSize: [70, 70], 
+                    yearLabel: {
                         show: true,
-                        position:"top",
-                        fontSize:50,
+                        position: 'top', 
+                        fontSize: 50,
                         formatter: date,
-                        margin:70,
-                        color:'black'
+                        margin: 70, 
+                        color:'black'  
                     },
                     orient: 'vertical',
-                    monthLabel: {
-                        show: false
-                    },
+                    monthLabel: {show: false},
                     range: date,
                     dayLabel: {
                         firstDay: locale == 'en'?0:1,
                         nameMap: week
                     },
                 }
-            ],
+            ],  
             series: {
                 type: 'custom',
                 coordinateSystem: 'calendar',
@@ -61,8 +54,7 @@ export default function TrashScheduler() {
                 renderItem: function (params: any, api: any) { return; }
             }
         });
-    }, [week, locale,date]);
-
+    }, [date]);
     return (
         <ReactEChartsCore
             echarts={echarts}
