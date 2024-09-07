@@ -13,14 +13,26 @@ echarts.use(
 
 export default function TrashScheduler() {
     const [option, setOption] = React.useState({});
-    const calculateCellSize = () => {
-        const width = window.innerWidth; // Get device width
-        if (width <= 640) {
-          return [40, 40]; 
-        } else {
-          return [70, 70]; 
-        }
-      };
+    const [cellSize, setCellSize] = React.useState([70, 70]);
+    // const calculateCellSize = () => {
+    //     const width = window.innerWidth; 
+    //     if (width <= 640) {
+    //       return [40, 40]; 
+    //     } else {
+    //       return [70, 70]; 
+    //     }
+    //   };
+      React.useEffect(() => {
+        const handleResize = () => {
+            const width = window.innerWidth;
+            setCellSize(width <=640 ? [40,40] : [70,70]);
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
       React.useEffect(()=>{
         setOption({
             tooltip: {},
@@ -28,7 +40,7 @@ export default function TrashScheduler() {
                 {
                     left: 'center',
                     top: 'middle',
-                    cellSize: calculateCellSize(),
+                    cellSize: cellSize,
                     yearLabel: { show: false },
                     orient: 'vertical',
                     dayLabel: {
@@ -48,7 +60,7 @@ export default function TrashScheduler() {
                 renderItem: function (params: any, api: any) { return; }
             }
         })
-      })
+      },[cellSize])
     //get current year/month
     // const now = (new Date().getMonth() + 1).toString() + '-' + new Date().getFullYear().toString();
     // range = now;
