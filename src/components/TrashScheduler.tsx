@@ -26,6 +26,18 @@ export default function TrashScheduler() {
         const now = new Date();
         return `${now.getFullYear()}-${(now.getMonth()+1).toString()}`;
     },[])
+    const [cellSize, setCellSize] = React.useState([70, 70]);
+    React.useEffect(() => {
+        const handleResize = () => {
+            const width = window.innerWidth;
+            setCellSize(width <=640 ? [40,40] : [70,70]);
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
     React.useEffect(() => {
         setOption({
             tooltip: {},
@@ -33,7 +45,7 @@ export default function TrashScheduler() {
                 {
                     left: 'center',
                     top: 'middle',
-                    cellSize: [70, 70], 
+                    cellSize: cellSize,
                     yearLabel: {
                         show: true,
                         position: 'top', 
@@ -59,14 +71,13 @@ export default function TrashScheduler() {
                 renderItem: function (params: any, api: any) { return; }
             }
         });
-    }, [locale,week,date]);
+    }, [locale,week,date,cellSize]);
     return (
         <ReactEChartsCore
             echarts={echarts}
             option={option}
             lazyUpdate={true}
             style={{ width: "100%", height: "90vh" }}
-            className="relative sm:w-[20%] sm:h-[60vh] mx-auto overflow-auto" // this is not working
         />
       
     );
