@@ -79,6 +79,5 @@ export default function TrashScheduler() {
             lazyUpdate={true}
             style={{ width: "100%", height: "90vh" }}
         />
-      
     );
 }
