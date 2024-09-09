@@ -87,7 +87,7 @@ export default function Echart() {
     return (
         
         <div style={{ padding: '20px' }}>
-            <h3 style={{display: 'block', margin:'0 auto', textAlign:'center'}}>{f('labelCarbon')}</h3>
+            <h3 className="my-0 mx-auto text-center" >{f('labelCarbon')}</h3>
             <ReactEChartsCore
                 echarts={echarts}
                 option={option}
