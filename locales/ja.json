@@ -44,6 +44,16 @@
     "postalCode": "郵便番号",
     "pref": "都道府県",
     "city-district": "市区町村",
-    "town": "町"
-  }
+    "town": "町",
+    "placeholder":"数字の間にハイフンはありません"
+  },
+  "CarbonCredit":{
+    "labelCarbon": "このチャートは、カーボンクレジットのために集めたポイントを表示します"
+  },
+  "SelectLa":{
+    "labelSelect":"言語を選択してください"
+  },
+  "Calendar": {
+    "nameMap": "日,月,火,水,木,金,土"
+  } 
 }

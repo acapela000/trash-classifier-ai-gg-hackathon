@@ -35,6 +35,16 @@
     "postalCode": "Mã bưu điện",
     "pref": "Tỉnh/Thành phố",
     "city-district": "Quận/Huyện",
-    "town": "Thị trấn"
+    "town": "Thị trấn",
+    "placeholder":"không có dấu gạch ngang ở giữa"
+  },
+  "CarbonCredit":{
+    "labelCarbon":"Biểu đồ hiển thị số điểm bạn thu thập được cho tín chỉ carbon"
+  },
+  "SelectLa":{
+    "labelSelect":"Tuỳ chỉnh ngôn ngữ"
+  },
+  "Calendar": {
+    "nameMap": "Thứ 7,Chủ nhật,Thứ 2,Thứ 3,Thứ 4,Thứ 5,Thứ 6"
   }
 }

@@ -1,0 +1,60 @@
+{
+  "Events": {
+    "event": "Eventos",
+    "eventContent": "Cualquier evento sobre reciclaje, reducción del calentamiento global, protección del medio ambiente...",
+    "event1": "Proyectos sostenibles a través del Maratón de Tokio 2024",
+    "event2": "Bazar de reciclaje gratuito primavera 2024 en el Campus de Kashiwa",
+    "event3": "Mantenimiento / Resiliencia TOKIO 2024 - Exposición de reciclaje / Tratamiento de residuos de construcción - Tokyo Big Sight",
+    "event4": "Actividades de voluntariado relacionadas con la recogida de basura en Tokio",
+    "event5": "Proteger el medio ambiente - Varias actividades",
+    "event-more": "Para más eventos",
+    "qa": "Puedes hacer preguntas y obtener respuestas aquí",
+    "help-feedback": "Ayuda y comentarios",
+    "help-feedback-content": "Puedes obtener ayuda y proporcionar comentarios para mejorar la aplicación web"
+  },
+  "CameraCapture": {
+    "takePhoto": "Toma una foto de un trozo de basura para que sea clasificado.",
+    "take-upload": "Tomar/Subir una foto."
+  },
+  "NavBar": {
+    "home": "Inicio",
+    "calendar": "Calendario",
+    "map": "Mapa de contenedores de basura",
+    "setting": "Configuración"
+  },
+  "RecyclingHints": {
+    "recyclingHints": "Consejos de reciclaje",
+    "hint1": "Enjuaga las botellas de plástico antes de reciclarlas.",
+    "hint2": "Aplana las cajas de cartón para ahorrar espacio.",
+    "hint3": "Retira las tapas de las botellas antes de reciclar.",
+    "hint4": "Separa los diferentes materiales en los contenedores adecuados.",
+    "hint5": "Evita reciclar contenedores de alimentos grasientos."
+  },
+  "ClassifierModels": {
+    "classifier": "Resultado de la predicción: Esta basura se puede clasificar como",
+    "type1": "Lata",
+    "type2-1": "Cartón",
+    "type2-2": "Papel",
+    "type3": "Botella de PET",
+    "type4": "Vidrio",
+    "type5": "Plástico"
+  },
+  "FormInputZipcode": {
+    "label": "Introduce tu ubicación actual para encontrar el lugar de eliminación de basura o contenedor más cercano",
+    "postalCode": "Código Postal",
+    "pref": "Prefectura",
+    "city-district": "Ciudad-Distrito",
+    "town": "Pueblo",
+    "placeholder":"Sin guiones entre números"
+  },
+  "CarbonCredit": {
+    "labelCarbon": "El gráfico muestra los puntos que acumulas para el crédito de carbono"
+  },
+  "SelectLa":{
+    "labelSelect":"Selecciona tu idioma"
+  },
+  "Calendar": {
+    "nameMap": "D,L,M,X,J,V,S"
+  }
+}
+  

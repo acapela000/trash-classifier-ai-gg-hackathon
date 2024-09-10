@@ -44,6 +44,16 @@
     "postalCode": "Postal Code",
     "pref": "Prefecture",
     "city-district": "City-Disrtrict",
-    "town": "Town"
+    "town": "Town",
+    "placeholder":"No dash between numbers"
+  },
+  "CarbonCredit":{
+    "labelCarbon":"The chart display the points you gather for carbon credit"
+  },
+  "SelectLa":{
+    "labelSelect":"Select your language"
+  },
+  "Calendar": {
+    "nameMap": "EN"
   }
 }

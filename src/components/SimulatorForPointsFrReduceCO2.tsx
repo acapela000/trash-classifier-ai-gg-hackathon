@@ -6,7 +6,7 @@ import * as echarts from 'echarts/core';
 import { BarChart, LineChart } from 'echarts/charts';
 import { TooltipComponent, GridComponent } from 'echarts/components';
 import { SVGRenderer } from 'echarts/renderers';
-
+import { useTranslations } from 'next-intl';
 
 echarts.use(
     [LineChart, BarChart, GridComponent, SVGRenderer, TooltipComponent]
@@ -83,10 +83,11 @@ export default function Echart() {
     // setInterval(() => {
     //     currentOption = currentOption === barOption ? lineOption : barOption;
     // }, 2000);
-
+    const f = useTranslations('CarbonCredit')
     return (
+        
         <div style={{ padding: '20px' }}>
-            <h3>The chart display the points you gather for carbon credit</h3>
+            <h3 className="my-0 mx-auto text-center" >{f('labelCarbon')}</h3>
             <ReactEChartsCore
                 echarts={echarts}
                 option={option}
