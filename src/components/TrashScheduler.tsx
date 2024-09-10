@@ -1,6 +1,5 @@
 "use client";
 import React, { useMemo } from "react";
-import React, { useMemo } from "react";
 import ReactEChartsCore from 'echarts-for-react/lib/core';
 import * as echarts from 'echarts/core';
 import { CustomChart } from 'echarts/charts';
@@ -17,7 +16,13 @@ export default function TrashScheduler() {
     const locale = useLocale();
     const c = useTranslations('Calendar');
     const [option, setOption] = React.useState({});
-    const date = useMemo(()=>{
+    const week = React.useMemo(() => {
+        if (directWeekLocale.includes(locale)) {
+            return c('nameMap');
+        }
+        return c('nameMap').split(',');
+    }, [c, locale]);
+    const date = React.useMemo(()=>{
         const now = new Date();
         return `${now.getFullYear()}-${(now.getMonth()+1).toString()}`;
     },[])
@@ -54,7 +59,7 @@ export default function TrashScheduler() {
                 renderItem: function (params: any, api: any) { return; }
             }
         });
-    }, [date]);
+    }, [locale,week,date]);
     return (
         <ReactEChartsCore
             echarts={echarts}
