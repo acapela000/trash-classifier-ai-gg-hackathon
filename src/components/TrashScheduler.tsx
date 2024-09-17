@@ -14,14 +14,6 @@ echarts.use(
 export default function TrashScheduler() {
     const [option, setOption] = React.useState({});
     const [cellSize, setCellSize] = React.useState([70, 70]);
-    // const calculateCellSize = () => {
-    //     const width = window.innerWidth; 
-    //     if (width <= 640) {
-    //       return [40, 40]; 
-    //     } else {
-    //       return [70, 70]; 
-    //     }
-    //   };
       React.useEffect(() => {
         const handleResize = () => {
             const width = window.innerWidth;
@@ -61,10 +53,6 @@ export default function TrashScheduler() {
             }
         })
       },[cellSize])
-    //get current year/month
-    // const now = (new Date().getMonth() + 1).toString() + '-' + new Date().getFullYear().toString();
-    // range = now;
-
     return (
         <ReactEChartsCore
             echarts={echarts}
