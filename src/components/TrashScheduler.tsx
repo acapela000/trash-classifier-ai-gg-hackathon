@@ -70,8 +70,9 @@ export default function TrashScheduler() {
                 data: [],
                 renderItem: function (params: any, api: any) { return; }
             }
-        });
-    }, [locale,week,date,cellSize]);
+        })
+      },[week,date,locale,cellSize])
+
     return (
         <ReactEChartsCore
             echarts={echarts}
