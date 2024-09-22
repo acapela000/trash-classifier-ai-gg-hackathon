@@ -24,6 +24,11 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
+       <head>
+        <link rel="icon" href="/favicon_io/favicon.ico"/>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+      </head>
       <body>
         <NextIntlClientProvider messages={messages}>
           {children}
