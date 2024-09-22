@@ -4,7 +4,7 @@ import '@fontsource-variable/onest';
 import NavBar from "@/components/NavBar";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
-
+import Background from "@/components/Background";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,8 +26,11 @@ export default async function RootLayout({
     <html lang={locale}>
       <body>
         <NextIntlClientProvider messages={messages}>
+        <div className="relative min-h-screen">
+          <Background />
           {children}
           <NavBar />
+        </div>
         </NextIntlClientProvider>
       </body>
     </html>
